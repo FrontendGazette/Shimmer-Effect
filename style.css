@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light: rgba(238, 238, 238, 1);
+  --dark: rgb(206, 203, 203);
+}
+
+/* Animation start */
+@keyframes blinker {
+  0% {
+    background-position: -1300px 0;
+  }
+
+  100% {
+    background-position: 0 1300px;
+  }
+}
+
+/* Animation stop */
+
+.shimmer {
+  animation: blinker 2.4s linear infinite;
+  background: var(--dark);
+  background-image: linear-gradient(
+    90deg,
+    var(--dark) 9%,
+    var(--light) 18%,
+    var(--dark) 30%
+  );
+  background-size: 1300px 100%;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(146, 146, 146);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 28rem;
+  height: 35rem;
+  border-radius: 8px;
+  box-shadow: 0 17px 17px rgb(8, 8, 8);
+}
+
+.profileImage {
+  height: 250px;
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+}
+
+.cardBody {
+  background: #fff;
+  padding: 8px 23px;
+}
+.header,
+.subHeader {
+  margin-top: 28px;
+  width: 100%;
+  height: 28px;
+  border-radius: 8px;
+}
+
+.text {
+  height: 14px;
+  width: 100%;
+  margin: 18px 0;
+  border-radius: 8px;
+}
